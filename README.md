@@ -37,7 +37,6 @@ h8 ping -c 1 h2
 ```
 All pings will now work.
 
-# Task-2
 # Task-2 : Host-based NAT Configuration
 
 ## Overview
