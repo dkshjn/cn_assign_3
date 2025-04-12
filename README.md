@@ -129,3 +129,34 @@ Run these two tests three times each.
 ---
 
 # Task-3: Network Routing 
+
+## Network Setup
+The network topology is as follows:
+
+- Cost between Node 0 and Node 1 → 1  
+- Cost between Node 0 and Node 2 → 3  
+- Cost between Node 0 and Node 3 → 7  
+- Cost between Node 1 and Node 2 → 1  
+- Cost between Node 2 and Node 3 → 2  
+- All other connections are assumed to be disconnected with cost = 999 (infinity)
+
+---
+
+## Code Implementation
+
+### Implemented Functions:
+| Function        | Description |
+|-----------------|-------------|
+| rtinitX()       | Initializes the distance table for Node X. |
+| rtupdateX()     | Updates the distance table of Node X upon receiving routing updates from neighbors. |
+| linkhandler0()  | Handles dynamic link cost changes for Node 0 (Extra Credit). |
+| linkhandler1()  | Handles dynamic link cost changes for Node 1 (Extra Credit). |
+
+These functions were implemented in the respective files: `node0.c`, `node1.c`, `node2.c`, `node3.c`
+
+## Running the Code
+
+```bash
+gcc distance_vector.c node0.c node1.c node2.c node3.c -o distance_vector
+./distance_vector > results.txt
+```
