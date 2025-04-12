@@ -1,0 +1,941 @@
+Enter TRACE:Node 0: Setting up...
+Node 0: Initial distance vector sent to neighbors 1, 2, and 3.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1   999   999
+dest 2|  999     3   999
+     3|  999   999     7
+Node 0: Initialization complete.
+
+Node 1: Setting up...
+Node 1: Initial distance vector sent to neighbors 0 and 2.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1   999
+dest 2|  999     1
+     3|  999   999
+Node 1: Initialization complete.
+
+Node 2: Setting up...
+Node 2: Initial distance vector sent to neighbors 0, 1, and 3.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    3   999   999
+dest 1|  999     1   999
+     3|  999   999     2
+Node 2: Initialization complete.
+
+Node 3: Setting up...
+Node 3: Initial distance vector sent to neighbors 0 and 2.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    7   999
+dest 1|  999   999
+     2|  999     2
+Node 3: Initialization complete.
+
+MAIN: rcv event, t=0.947, at 3 src: 0, dest: 3, contents:   0   1   3   7
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 3, 7}
+Node 3: Found shorter path to Node 1 via Node 0 (New cost: 8).
+Node 3: Found shorter path to Node 2 via Node 0 (New cost: 10).
+Node 3: Found shorter path to Node 3 via Node 0 (New cost: 14).
+Node 3: Distance table updated.
+Node 3: Sending updated DV {7, 8, 2, 0} to neighbors 0 and 2.
+Node 3: Updated distance vector broadcast to neighbors.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    7   999
+dest 1|    8   999
+     2|   10     2
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=0.992, at 0 src: 1, dest: 0, contents:   1   0   1 999
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 999}
+Node 0: Found shorter path to Node 0 via Node 1 (New cost: 2).
+Node 0: Found shorter path to Node 2 via Node 1 (New cost: 2).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 7} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1   999   999
+dest 2|    2     2   999
+     3|  999   999     7
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=1.209, at 3 src: 2, dest: 3, contents:   3   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 3: Found shorter path to Node 0 via Node 2 (New cost: 5).
+Node 3: Found shorter path to Node 1 via Node 2 (New cost: 3).
+Node 3: Found shorter path to Node 3 via Node 2 (New cost: 4).
+Node 3: Distance table updated.
+Node 3: Sending updated DV {5, 3, 2, 0} to neighbors 0 and 2.
+Node 3: Updated distance vector broadcast to neighbors.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    5     5
+dest 1|    8     3
+     2|   10     2
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=1.276, at 3 src: 0, dest: 3, contents:   0   1   2   7
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 7}
+Node 3: Found shorter path to Node 1 via Node 0 (New cost: 6).
+Node 3: Found shorter path to Node 2 via Node 0 (New cost: 7).
+Node 3: Found shorter path to Node 3 via Node 0 (New cost: 12).
+Node 3: Distance table updated.
+Node 3: Sending updated DV {5, 3, 2, 0} to neighbors 0 and 2.
+Node 3: Updated distance vector broadcast to neighbors.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    5     5
+dest 1|    6     3
+     2|    7     2
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=1.642, at 2 src: 0, dest: 2, contents:   0   1   3   7
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 3, 7}
+Node 2: Found shorter path to Node 1 via Node 0 (New cost: 4).
+Node 2: Found shorter path to Node 2 via Node 0 (New cost: 6).
+Node 2: Found shorter path to Node 3 via Node 0 (New cost: 10).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {3, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    3   999   999
+dest 1|    4     1   999
+     3|   10   999     2
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=1.871, at 1 src: 0, dest: 1, contents:   0   1   3   7
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 3, 7}
+Node 1: Found shorter path to Node 1 via Node 0 (New cost: 2).
+Node 1: Found shorter path to Node 2 via Node 0 (New cost: 4).
+Node 1: Found shorter path to Node 3 via Node 0 (New cost: 8).
+Node 1: Distance table updated.
+Node 1: Sending updated DV {1, 0, 1, 8} to neighbors 0 and 2.
+Node 1: Updated distance vector broadcast to neighbors.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1   999
+dest 2|    4     1
+     3|    8   999
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=2.166, at 2 src: 1, dest: 2, contents:   1   0   1 999
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 999}
+Node 2: Found shorter path to Node 0 via Node 1 (New cost: 2).
+Node 2: Found shorter path to Node 2 via Node 1 (New cost: 2).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2   999
+dest 1|    4     1   999
+     3|   10   999     2
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=2.407, at 0 src: 2, dest: 0, contents:   3   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 0: Found shorter path to Node 0 via Node 2 (New cost: 5).
+Node 0: Found shorter path to Node 1 via Node 2 (New cost: 3).
+Node 0: Found shorter path to Node 3 via Node 2 (New cost: 4).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3   999
+dest 2|    2     2   999
+     3|  999     4     4
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=2.421, at 2 src: 3, dest: 2, contents:   7 999   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {7, 999, 2, 0}
+Node 2: Found shorter path to Node 0 via Node 3 (New cost: 9).
+Node 2: Found shorter path to Node 2 via Node 3 (New cost: 4).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     9
+dest 1|    4     1   999
+     3|   10   999     2
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=2.811, at 1 src: 2, dest: 1, contents:   3   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 1: Found shorter path to Node 0 via Node 2 (New cost: 4).
+Node 1: Found shorter path to Node 1 via Node 2 (New cost: 2).
+Node 1: Found shorter path to Node 3 via Node 2 (New cost: 3).
+Node 1: Distance table updated.
+Node 1: Sending updated DV {1, 0, 1, 3} to neighbors 0 and 2.
+Node 1: Updated distance vector broadcast to neighbors.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1     4
+dest 2|    4     1
+     3|    8     3
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=3.078, at 3 src: 2, dest: 3, contents:   3   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=3.293, at 2 src: 3, dest: 2, contents:   7   8   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {7, 8, 2, 0}
+Node 2: Found shorter path to Node 1 via Node 3 (New cost: 10).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     9
+dest 1|    4     1    10
+     3|   10   999     2
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=4.063, at 2 src: 0, dest: 2, contents:   0   1   2   7
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 7}
+Node 2: Found shorter path to Node 1 via Node 0 (New cost: 3).
+Node 2: Found shorter path to Node 2 via Node 0 (New cost: 4).
+Node 2: Found shorter path to Node 3 via Node 0 (New cost: 9).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     9
+dest 1|    3     1    10
+     3|    9   999     2
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=4.104, at 0 src: 3, dest: 0, contents:   7 999   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {7, 999, 2, 0}
+Node 0: Found shorter path to Node 0 via Node 3 (New cost: 11).
+Node 0: Found shorter path to Node 2 via Node 3 (New cost: 6).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3   999
+dest 2|    2     2     6
+     3|  999     4     4
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=4.169, at 2 src: 3, dest: 2, contents:   5   3   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {5, 3, 2, 0}
+Node 2: Found shorter path to Node 0 via Node 3 (New cost: 7).
+Node 2: Found shorter path to Node 1 via Node 3 (New cost: 5).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     7
+dest 1|    3     1     5
+     3|    9   999     2
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=4.330, at 0 src: 3, dest: 0, contents:   7   8   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {7, 8, 2, 0}
+Node 0: Found shorter path to Node 1 via Node 3 (New cost: 12).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3    12
+dest 2|    2     2     6
+     3|  999     4     4
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=4.557, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Found shorter path to Node 0 via Node 2 (New cost: 4).
+Node 3: Distance table updated.
+Node 3: Sending updated DV {4, 3, 2, 0} to neighbors 0 and 2.
+Node 3: Updated distance vector broadcast to neighbors.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    4     4
+dest 1|    6     3
+     2|    7     2
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=4.643, at 1 src: 0, dest: 1, contents:   0   1   2   7
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 7}
+Node 1: Found shorter path to Node 2 via Node 0 (New cost: 3).
+Node 1: Distance table updated.
+Node 1: Sending updated DV {1, 0, 1, 3} to neighbors 0 and 2.
+Node 1: Updated distance vector broadcast to neighbors.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1     4
+dest 2|    3     1
+     3|    8     3
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=5.093, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Found shorter path to Node 1 via Node 0 (New cost: 5).
+Node 3: Found shorter path to Node 2 via Node 0 (New cost: 6).
+Node 3: Found shorter path to Node 3 via Node 0 (New cost: 8).
+Node 3: Distance table updated.
+Node 3: Sending updated DV {4, 3, 2, 0} to neighbors 0 and 2.
+Node 3: Updated distance vector broadcast to neighbors.
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    4     4
+dest 1|    5     3
+     2|    6     2
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=5.213, at 0 src: 3, dest: 0, contents:   5   3   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {5, 3, 2, 0}
+Node 0: Found shorter path to Node 0 via Node 3 (New cost: 9).
+Node 0: Found shorter path to Node 1 via Node 3 (New cost: 7).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|  999     4     4
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=5.271, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=5.378, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=5.740, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=5.820, at 1 src: 2, dest: 1, contents:   3   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=5.935, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=6.042, at 2 src: 3, dest: 2, contents:   5   3   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {5, 3, 2, 0}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=6.071, at 0 src: 3, dest: 0, contents:   5   3   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {5, 3, 2, 0}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=6.205, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Found shorter path to Node 0 via Node 2 (New cost: 3).
+Node 1: Distance table updated.
+Node 1: Sending updated DV {1, 0, 1, 3} to neighbors 0 and 2.
+Node 1: Updated distance vector broadcast to neighbors.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1     3
+dest 2|    3     1
+     3|    8     3
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=6.886, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Found shorter path to Node 3 via Node 0 (New cost: 5).
+Node 1: Distance table updated.
+Node 1: Sending updated DV {1, 0, 1, 3} to neighbors 0 and 2.
+Node 1: Updated distance vector broadcast to neighbors.
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1     3
+dest 2|    3     1
+     3|    5     3
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=7.012, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=7.021, at 0 src: 2, dest: 0, contents:   3   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {3, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=7.060, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=7.160, at 2 src: 1, dest: 2, contents:   1   0   1   8
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 8}
+Node 2: Found shorter path to Node 3 via Node 1 (New cost: 9).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     7
+dest 1|    3     1     5
+     3|    9     9     2
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=7.464, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Found shorter path to Node 3 via Node 0 (New cost: 6).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     7
+dest 1|    3     1     5
+     3|    6     9     2
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=7.732, at 0 src: 1, dest: 0, contents:   1   0   1   8
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 8}
+Node 0: Found shorter path to Node 3 via Node 1 (New cost: 9).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|    9     4     4
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=7.961, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=8.438, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=8.630, at 2 src: 1, dest: 2, contents:   1   0   1   3
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 2: Found shorter path to Node 3 via Node 1 (New cost: 4).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     7
+dest 1|    3     1     5
+     3|    6     4     2
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=8.810, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=9.513, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=9.514, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Found shorter path to Node 0 via Node 2 (New cost: 4).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|    9     4     4
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=10.531, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=10.568, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=10.577, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=10.705, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=10.718, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=10.786, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=10.899, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=11.448, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=11.497, at 2 src: 3, dest: 2, contents:   4   3   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {4, 3, 2, 0}
+Node 2: Found shorter path to Node 0 via Node 3 (New cost: 6).
+Node 2: Distance table updated.
+Node 2: Sending updated DV {2, 1, 0, 2} to neighbors 0, 1, and 3.
+Node 2: Updated distance vector broadcast to neighbors.
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    2     2     6
+dest 1|    3     1     5
+     3|    6     4     2
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=12.433, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=12.495, at 0 src: 1, dest: 0, contents:   1   0   1   3
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 0: Found shorter path to Node 3 via Node 1 (New cost: 4).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|    4     4     4
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=12.660, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=12.729, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=13.082, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=13.197, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=13.226, at 2 src: 1, dest: 2, contents:   1   0   1   3
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=13.394, at 2 src: 3, dest: 2, contents:   4   3   2   0
+Node 2: Received a routing update.
+Node 2: Update received from Node 3 with DV: {4, 3, 2, 0}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 3.
+
+MAIN: rcv event, t=13.936, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=14.040, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=14.161, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=14.580, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=14.963, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=15.028, at 3 src: 2, dest: 3, contents:   2   1   0   2
+Node 3: Received a routing update.
+Node 3: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 2.
+
+MAIN: rcv event, t=15.192, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=15.221, at 2 src: 1, dest: 2, contents:   1   0   1   3
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=15.371, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=15.813, at 2 src: 1, dest: 2, contents:   1   0   1   3
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=15.863, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=16.096, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=16.123, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=16.338, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=16.485, at 1 src: 2, dest: 1, contents:   2   1   0   2
+Node 1: Received a routing update.
+Node 1: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 2.
+
+MAIN: rcv event, t=17.141, at 0 src: 3, dest: 0, contents:   4   3   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {4, 3, 2, 0}
+Node 0: Found shorter path to Node 0 via Node 3 (New cost: 8).
+Node 0: Distance table updated.
+Node 0: Sending updated DV {0, 1, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Updated distance vector broadcast to neighbors.
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|    4     4     4
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=17.501, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=17.527, at 0 src: 1, dest: 0, contents:   1   0   1   3
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=17.750, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=17.830, at 2 src: 0, dest: 2, contents:   0   1   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=18.143, at 3 src: 0, dest: 3, contents:   0   1   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=18.693, at 0 src: 3, dest: 0, contents:   4   3   2   0
+Node 0: Received a routing update.
+Node 0: Update received from Node 3 with DV: {4, 3, 2, 0}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 3.
+
+MAIN: rcv event, t=18.744, at 1 src: 0, dest: 1, contents:   0   1   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 1, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=19.111, at 0 src: 1, dest: 0, contents:   1   0   1   3
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=20.976, at 0 src: 1, dest: 0, contents:   1   0   1   3
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {1, 0, 1, 3}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=22.336, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=22.398, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=22.615, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=22.863, at 0 src: 2, dest: 0, contents:   2   1   0   2
+Node 0: Received a routing update.
+Node 0: Update received from Node 2 with DV: {2, 1, 0, 2}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 2.
+
+MAIN: rcv event, t=10000.000, at -1
+Node 0: Link cost change detected for neighbor 1.
+Node 0: Previous direct cost = 1, New direct cost = 20.
+Node 0: Recalculating all shortest paths due to link cost change...
+Node 0: Minimum cost to node 1 changed (was 20, now 3). Neighbors to be notified.
+Node 0: Shortest paths updated. Preparing to broadcast new distance vector.
+Node 0: Broadcasting updated DV {0, 3, 2, 4} to neighbors 1, 2, and 3.
+Node 0: Update packets sent to all neighbors.
+Node 0: Current distance table state after handling link change to 1:
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    3     3     7
+dest 2|    2     2     6
+     3|    4     4     4
+Node 0: Finished handling link cost change.
+
+
+Node 1: Link cost change detected for neighbor 0.
+Node 1: Previous direct cost = 1, New direct cost = 20.
+Node 1: Recalculating all shortest paths due to link cost change...
+Node 1: Minimum cost to node 0 changed (was 20, now 3). Neighbors to be notified.
+Node 1: Shortest paths updated. Preparing to broadcast new distance vector.
+Node 1: Broadcasting updated DV {3, 0, 1, 3} to neighbors 0 and 2.
+Node 1: Update packets sent to all neighbors.
+Node 1: Current distance table state after handling link change to 0:
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    3     3
+dest 2|    3     1
+     3|    5     3
+Node 1: Finished handling link cost change.
+
+MAIN: rcv event, t=10000.975, at 2 src: 0, dest: 2, contents:   0   3   2   4
+Node 2: Received a routing update.
+Node 2: Update received from Node 0 with DV: {0, 3, 2, 4}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 0.
+
+MAIN: rcv event, t=10001.107, at 1 src: 0, dest: 1, contents:   0   3   2   4
+Node 1: Received a routing update.
+Node 1: Update received from Node 0 with DV: {0, 3, 2, 4}
+Node 1: Received update but no changes were made.
+Node 1: Finished processing update from Node 0.
+
+MAIN: rcv event, t=10001.131, at 2 src: 1, dest: 2, contents:   3   0   1   3
+Node 2: Received a routing update.
+Node 2: Update received from Node 1 with DV: {3, 0, 1, 3}
+Node 2: Received update but no changes were made.
+Node 2: Finished processing update from Node 1.
+
+MAIN: rcv event, t=10001.524, at 0 src: 1, dest: 0, contents:   3   0   1   3
+Node 0: Received a routing update.
+Node 0: Update received from Node 1 with DV: {3, 0, 1, 3}
+Node 0: Received update but no changes were made.
+Node 0: Finished processing update from Node 1.
+
+MAIN: rcv event, t=10001.851, at 3 src: 0, dest: 3, contents:   0   3   2   4
+Node 3: Received a routing update.
+Node 3: Update received from Node 0 with DV: {0, 3, 2, 4}
+Node 3: Received update but no changes were made.
+Node 3: Finished processing update from Node 0.
+
+MAIN: rcv event, t=20000.000, at 0
+Node 0: Link cost change detected for neighbor 1.
+Node 0: Previous direct cost = 3, New direct cost = 1.
+Node 0: Recalculating all shortest paths due to link cost change...
+Node 0: Link cost change did not affect the overall shortest paths, therefore no broadcast needed.
+Node 0: Current distance table state after handling link change to 1:
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    1     3     7
+dest 2|    2     2     6
+     3|    4     4     4
+Node 0: Finished handling link cost change.
+
+
+Node 1: Link cost change detected for neighbor 0.
+Node 1: Previous direct cost = 3, New direct cost = 1.
+Node 1: Recalculating all shortest paths due to link cost change...
+Node 1: Link cost change did not affect the overall shortest paths, therefore no broadcast needed.
+Node 1: Current distance table state after handling link change to 0:
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    1     3
+dest 2|    3     1
+     3|    5     3
+Node 1: Finished handling link cost change.
+
+
+Simulator terminated at t=20000.000000, no packets in medium
